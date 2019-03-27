@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class = "container">
+   {% if blogs|length>0 %}
+      <h2> Your blogs are : </h2>
+      {% for blog in blogs %}
+         <h3><a href ="/posts/{{ blog._id }}">{{ blog.title }}</a></h3>
+         <p>{{ blog.description }}</p>
+         <hr>
+      {% endfor %}
+    {% else %}
+        <h2>You don't have any blogs yet</h2>
+        <a href = "/blogs/new"><button class ="btn btn-primary">Start a new blog!</button></a></button>
+   {% enif %}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+   {% if email is none %}
+      <h1> You are not a registered user </h1>
+      <form method="get" action="/register">
+        <button type="submit">Click here to register</button>
+      </form>
+   {% else %}
+      <h1> Hello {{ email }} </h1>
+
+      <a href = "/blogs/new"><button class ="btn btn-primary">Start a new blog!</button></a></button>
+      <a href = "/blogs"><button class ="btn btn-primary">My blogs</button></a></button>
+   {% endif %}
+{% endblock %}
